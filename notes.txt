@@ -1,0 +1,6 @@
+This version of rescueMe:
+
+Started off with samples from the book Getting MEAN
+added User schema, mongoose, and unit testing from the mean.io sample
+cloned rescueMe code from textola
+
