@@ -5,7 +5,7 @@ module.exports = function (app) {
   var users = require('../api_server/controllers/users');
 
   app.get('/api/users/me', users.me);
-  //app.get('/api/users/:userId', users.show);
+  app.get('/api/users/:userId', users.show);
   //app.get('/api', users.index);
 //  app.get('/signin', users.signin);
 //  app.get('/signup', users.signup);
@@ -15,9 +15,13 @@ module.exports = function (app) {
   //app.post('/users', users.create);
 
     var animals = require('../api_server/controllers/animals');
-    app.get('/api/animals/:animalId', animals.get);
+    app.get('/api/animals/:animalId', animals.show);
+    app.delete('/api/animals/:animalId', animals.destroy);
+    app.put('/api/animals/:animalId', animals.update);
+    app.post('/api/animals', animals.create);
 
-
+    //Finish with setting up the articleId param
+    app.param('animalId', animals.animal);
 
 };
 

@@ -7,7 +7,8 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-  User = mongoose.model('User');
+  User = mongoose.model('User'),
+    _ = require('underscore');
 
 /**
  * Create user
@@ -25,6 +26,18 @@ exports.create = function(req, res) {
   });
 };
 
+
+/**
+ *  Show profile
+ */
+exports.show = function(req, res) {
+    var user = req.profile;
+
+    res.render('users/show', {
+        title: user.name,
+        user: user
+    });
+};
 /**
  * Send User
  */
@@ -33,6 +46,10 @@ exports.me = function(req, res) {
   return;
   res.jsonp(req.user || null);
 };
+
+
+
+
 
 /**
  * Find user by id
