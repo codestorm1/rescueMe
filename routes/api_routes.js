@@ -14,5 +14,10 @@ module.exports = function (app) {
   //Setting up the users api
   //app.post('/users', users.create);
 
+    var animals = require('../api_server/controllers/animals');
+    app.get('/api/animals/:animalId', animals.get);
+
+
+
 };
 

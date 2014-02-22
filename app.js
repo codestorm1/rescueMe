@@ -49,7 +49,7 @@ walk(models_path);
 
 //Bootstrap db connection
 //var db = mongoose.connect("mongodb://textfiend:1!storedata@ds053648.mongolab.com:53648/textola");
-mongoose.connect('mongodb://localhost/textola');
+mongoose.connect('mongodb://localhost/arms');
 
 require('./routes/web_routes.js')(app);
 require('./routes/api_routes.js')(app);

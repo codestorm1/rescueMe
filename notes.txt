@@ -1,6 +1,6 @@
-This version of rescueMe:
+This version of Animal Rescue Management System:
 
 Started off with samples from the book Getting MEAN
 added User schema, mongoose, and unit testing from the mean.io sample
-cloned rescueMe code from textola
+cloned arms code from textola
 
