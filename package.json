@@ -13,9 +13,9 @@
     "express": "~3.3.4",
     "jade": "~0.34.0",
     "grunt-env": "latest",
-    "mongoose" : "~3.8.5",
-    "underscore": "latest"
-
+    "mongoose": "~3.8.5",
+    "underscore": "latest",
+    "cors": "~2.1.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

@@ -6,7 +6,8 @@
 var express = require('express')
   , fs = require('fs')
   , http = require('http')
-  , path = require('path');
+  , path = require('path'),
+    cors = require('cors');
 var mongoose = require('mongoose');
 
 var app = express();
@@ -19,6 +20,7 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(cors()),
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });

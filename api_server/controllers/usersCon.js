@@ -48,9 +48,6 @@ exports.me = function(req, res) {
 };
 
 
-
-
-
 /**
  * Find user by id
  */
