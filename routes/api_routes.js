@@ -7,9 +7,6 @@ module.exports = function (app) {
   app.get('/api/users/me', users.me);
   app.get('/api/users/:userId', users.show);
   //app.get('/api', users.index);
-//  app.get('/signin', users.signin);
-//  app.get('/signup', users.signup);
-//  app.get('/signout', users.signout);
 
   //Setting up the users api
   //app.post('/users', users.create);
@@ -23,6 +20,15 @@ module.exports = function (app) {
     //Finish with setting up the animalId param
     app.param('animalId', animals.findOneOf);
 
+    var defaultController = require('../api_server/controllers/defaultCon');
+    app.get('/api/:model/:modelID', defaultController.show);
+    app.delete('/api/:model/:modelID', defaultController.destroy);
+    app.put('/api/:model/:modelID', defaultController.update);
+    app.post('/api/:model', defaultController.create);
+
+    //Finish with setting up the ModelType and modelID params
+    app.param('model', defaultController.findModelType);
+    app.param('modelID', defaultController.findModel);
 
 
 };

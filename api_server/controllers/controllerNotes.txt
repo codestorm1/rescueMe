@@ -1,0 +1,5 @@
+The easiest way to add a model with an endpoint is to create a Mongoose Schema, add the schema to
+the whitelist of the default controller, which will automatically make CRUD endpoints available.
+
+To customize some functionality, use the CRUD controller as a base, then override any methods that need customization.
+

@@ -1,17 +1,22 @@
 var mongoose = require('mongoose'),
     _ = require('underscore');
 
-exports.create = function(req, res, Schema, modelName) {
-    var model = new Schema(req.body);
-
+exports.create = function(req, res, Model, modelName) {
+    var model = new Model(req.body);
     model.save(function(err) {
         if (err) {
-            res.json({errors :  err.errors,
-                model : model});
+            if (err.errors) {
+                res.json(400, {errors: err.errors,
+                    model: model});
+            }
+            else {
+                res.json(400, {errors :  err,
+                    model : model});
+            }
         }
         else {
             var url = 'http://localhost:3000/api/'  + modelName + '/' + model._id;
-            res.json({"URL" : url });
+            res.json(201, {"URL" : url });
         }
     });
 };

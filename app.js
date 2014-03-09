@@ -29,6 +29,10 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+//Bootstrap db connection
+//var db = mongoose.connect("mongodb://textfiend:1!storedata@ds053648.mongolab.com:53648/textola");
+mongoose.connect('mongodb://localhost/arms');
+
 
 //Bootstrap models
 var models_path = __dirname + '/api_server/models';
@@ -40,7 +44,6 @@ var walk = function(path) {
       if (/(.*)\.(js$|coffee$)/.test(file)) {
         console.log('requiring model at: ' + newPath);
         require(newPath);
-
       }
     } else if (stat.isDirectory()) {
       walk(newPath);
@@ -48,10 +51,6 @@ var walk = function(path) {
   });
 };
 walk(models_path);
-
-//Bootstrap db connection
-//var db = mongoose.connect("mongodb://textfiend:1!storedata@ds053648.mongolab.com:53648/textola");
-mongoose.connect('mongodb://localhost/arms');
 
 require('./routes/web_routes.js')(app);
 require('./routes/api_routes.js')(app);

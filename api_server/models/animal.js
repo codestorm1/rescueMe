@@ -4,10 +4,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-
-/**
- * Animal Schema
- */
 var AnimalSchema = new Schema({
     name: String,
     oldNames : [],

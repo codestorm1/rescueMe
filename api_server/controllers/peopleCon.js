@@ -9,13 +9,12 @@ var mongoose = require('mongoose'),
 
 _.extend(exports, crud);
 
-/**
- * Create animal
- */
+var config = { name : 'person', Schema : Person};
+
 exports.create = function(req, res) {
-    crud.create(req, res, Animal, 'animal');
+    crud.create(req, res, personSchema.Schema);
 };
 
 exports.findOneOf = function(req, res, next, id) {
-    return crud.findOneOf(req, res, next, id, Animal, 'animal');
+    return crud.findOneOf(req, res, next, id, Person, 'person');
 };
