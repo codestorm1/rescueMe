@@ -6,12 +6,10 @@ exports.create = function(req, res, Model, modelName) {
     model.save(function(err) {
         if (err) {
             if (err.errors) {
-                res.json(400, {errors: err.errors,
-                    model: model});
+                res.json(400, {errors: err.errors});
             }
             else {
-                res.json(400, {errors :  err,
-                    model : model});
+                res.json(400, {errors :  err});
             }
         }
         else {

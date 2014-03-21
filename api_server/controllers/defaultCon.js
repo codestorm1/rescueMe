@@ -8,7 +8,8 @@ var mongoose = require('mongoose'),
 
 var schemaWhiteList = {'vaccines' : Vaccine, 'shelters' : Shelter};
 
-_.extend(exports, crud);
+
+exports = module.exports = Object.create(crud); // inherit crud
 
 exports.create = function(req, res) {
     crud.create(req, res, req.Model, req.modelName);

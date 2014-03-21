@@ -1,5 +1,6 @@
 module.exports = {
-    streetAddress: String,
+    streetNumber: Number,
+    streetName: String,
     extraAddressLine: String,
     apartmentOrSuite: String,
     city: String,

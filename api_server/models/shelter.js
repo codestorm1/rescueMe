@@ -13,7 +13,8 @@ var ShelterSchema = new Schema({
     website : String,
     email : String,
     phoneNumbers : [],
-    address : {
+    address:
+    {
         type: address,
         unique: true,
         required: true

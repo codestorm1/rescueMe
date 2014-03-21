@@ -4,10 +4,9 @@
 
 var mongoose = require('mongoose'),
     Animal = mongoose.model('Animal'),
-    crud = require('./CRUD'),
-    _ = require('underscore');
+    crud = require('./CRUD');
 
-_.extend(exports, crud);
+exports = module.exports = Object.create(crud); // inherit crud
 
 var config = { name : 'person', Schema : Person};
 

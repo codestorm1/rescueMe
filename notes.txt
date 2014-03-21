@@ -2,5 +2,8 @@ This version of Animal Rescue Management System:
 
 Started off with samples from the book Getting MEAN
 added User schema, mongoose, and unit testing from the mean.io sample
-cloned arms code from textola
+cloned ARMS code from textola
+
+Added animal controller, default controller to handle generic crud.
+With the default controller, simply adding a mongoose schema will make crud endpoints available
 
